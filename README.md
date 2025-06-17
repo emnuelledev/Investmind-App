@@ -1,137 +1,126 @@
-# 📱 InvestMind — Assessor Virtual de Investimentos
-**Desenvolvido para a disciplina: Mobile Development and IoT — FIAP | Challenge XP Inc. 2025**  
-**Grupo:** Engenharia de Software — 3ESPV | FEV/2025
+# 📱 InvestMind — Virtual Investment Advisor  
+**Developed for the course: Mobile Development and IoT — FIAP | Challenge XP Inc. 2025**  
+**Academic Project — Software Engineering (3ESPV), February 2025**
 
+## 🎯 App Objective
 
-## 🎯 Objetivo do App
+**InvestMind** is a mobile application that works as a **virtual investment advisor**, helping users discover their investor profile and manage their own portfolio based on personalized recommendations.
 
-O **InvestMind** é um aplicativo mobile que funciona como um **assessor virtual de investimentos**, ajudando o usuário a descobrir seu perfil de investidor e a gerenciar sua própria carteira com base em recomendações personalizadas.
+Additionally, the app simulates financial operations (investments, withdrawals, and transfers) with an educational and practical focus — 100% local and offline.
 
-Além disso, o app simula movimentações financeiras (aplicações, resgates e transferências) com foco educacional e prático, de forma 100% local e offline.
+## 📱 Figma Prototype  
+Access the Figma prototype: [click here!](https://www.figma.com/design/Y874nA6l47N07xvXPCuCAt/Prot%C3%B3tipo-Mobile-GS?node-id=0-1&t=JT0R9rtNw8RpN92s-1)
 
-## 📱 Protótipo no Figma
-Acesso ao protótipo no Figma: [clique aqui!](https://www.figma.com/design/Y874nA6l47N07xvXPCuCAt/Prot%C3%B3tipo-Mobile-GS?node-id=0-1&t=JT0R9rtNw8RpN92s-1)
+## 🧩 Key Features
 
+- 🔐 Login screen with simple validation  
+- 🆕 Sign-up modal with CPF, email, and password  
+- 🏦 Simulated balance with the ability to invest or transfer  
+- 📋 Quiz with 10 questions to determine the investor profile  
+- 📊 Automatic asset recommendation based on profile  
+- 💼 Portfolio view with investment and withdrawal history  
+- 🔍 Search bar for assets  
+- ✅ Option to invest and withdraw from each asset  
+- 📈 Simulated gain/loss chart  
+- 🕓 Detailed history of:
+  - Assigned profiles (quiz results)  
+  - Balance transactions (deposits and withdrawals)  
+  - Past investments  
+- 🚪 Logout button  
+- 📱 Responsive, modern, and accessible layout  
 
-## 🧩 Funcionalidades Desenvolvidas
+## ⚙️ Technologies and Tools
 
-- 🔐 Tela de login com validação simples
-- 🆕 Modal de cadastro com CPF, e-mail e senha
-- 🏦 Simulação de saldo com possibilidade de aplicar ou transferir
-- 📋 Quiz com 10 perguntas para definição do perfil de investidor
-- 📊 Recomendação automática de ativos com base no perfil
-- 💼 Visualização da carteira com histórico de aplicações e resgates
-- 🔍 Barra de busca por ativos
-- ✅ Possibilidade de aplicar e retirar valores de cada ativo
-- 📈 Gráfico de ganhos/perdas simulado
-- 🕓 Histórico detalhado de:
-  - Perfis atribuídos (quiz)
-  - Transações de saldo (aplicação e saque)
-  - Investimentos feitos
-- 🚪 Botão de logout
-- 📱 Layout responsivo, moderno e acessível
+| Stack               | Description                                             |
+|--------------------|---------------------------------------------------------|
+| React Native + Expo| Cross-platform mobile app development                   |
+| TypeScript         | Static typing and code structure                        |
+| React Navigation   | Screen navigation                                       |
+| AsyncStorage       | Local data persistence (users, balance, etc.)           |
+| Android Studio     | Emulator for development and testing                    |
+| Figma              | Visual prototype of the solution                        |
 
-## ⚙️ Tecnologias e Ferramentas
+## 📐 Screen Structure
 
-| Stack               | Descrição                                         |
-|--------------------|---------------------------------------------------|
-| React Native + Expo| Criação da aplicação mobile multiplataforma       |
-| TypeScript         | Tipagem estática e organização de código          |
-| React Navigation   | Navegação entre telas                             |
-| AsyncStorage       | Persistência local de dados (usuários, saldo etc) |
-| Android Studio     | Emulador para testes e desenvolvimento            |
-| Figma              | Protótipo visual da solução (em desenvolvimento)  |
+| Screen                  | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| **Login / Sign-up**     | User authentication and registration screen                                 |
+| **Home**                | Welcome message, current balance, profile, chart, and shortcuts             |
+| **Profile Quiz**        | Collects answers to define the user's investor profile                      |
+| **Investment Portfolio**| Displays available actions, current portfolio, and investment simulation    |
+| **History**             | Full record of quizzes, transactions, and investments                       |
 
-## 📐 Estrutura de Telas
+## 🧠 Recommendation Logic
 
-| Tela                   | Descrição                                                                 |
-|------------------------|--------------------------------------------------------------------------|
-| **Login / Cadastro**   | Tela de autenticação e registro do usuário                              |
-| **Home**               | Saudação, saldo, perfil atual, gráfico e atalhos                        |
-| **Quiz de Perfil**     | Coleta de respostas para cálculo do perfil (conservador, moderado, etc) |
-| **Carteira de Investimentos** | Ações disponíveis, carteira atual, saldo e simulações de aplicações     |
-| **Histórico**          | Registro completo de quizzes, transações e investimentos feitos         |
+The recommended portfolio is based on answers from the quiz, including:
 
-## 🧠 Lógica de Recomendação
+- Knowledge level  
+- Investment horizon  
+- Risk tolerance  
+- Monthly income  
+- Experience with financial products  
 
-A carteira recomendada é baseada em critérios respondidos no quiz, como:
+Each profile receives 7 tailored recommendations:
 
-- Nível de conhecimento
-- Horizonte de tempo
-- Tolerância ao risco
-- Renda mensal
-- Experiência com ativos
+- **Conservative**: CDB, Treasury Bonds (Tesouro Selic), Fixed Income, etc.  
+- **Moderate**: Multimarket Funds, LCI/LCA, Debentures, etc.  
+- **Aggressive**: Stocks, ETFs, Cryptocurrencies, BDRs, etc.
 
-Cada perfil recebe 7 recomendações:
-
-- **Conservador**: CDB, Tesouro Selic, Renda Fixa etc.
-- **Moderado**: Fundos Multimercado, LCI/LCA, Debêntures etc.
-- **Agressivo**: Ações, ETFs, Criptomoedas, BDRs etc.
-
-## 📂 Estrutura de Pastas
+## 📂 Folder Structure
 
 ```
 /src
- ├── components       # Componentes reutilizáveis
- ├── navigation       # Arquivo de rotas com tipagem
- ├── screens          # Telas principais do app (Login, Home, etc)
- ├── types            # Tipagens globais e interfaces
- ├── utils            # Funções auxiliares e regras de negócio
- └── assets           # Imagens como logo, avatar etc.
+ ├── components       # Reusable components
+ ├── navigation       # Navigation routes and types
+ ├── screens          # Main app screens (Login, Home, etc.)
+ ├── types            # Global types and interfaces
+ ├── utils            # Helper functions and business logic
+ └── assets           # Images like logo, avatar, etc.
 ```
 
-## 🚀 Como rodar o projeto localmente
+## 🚀 How to Run Locally
 
-1. **Clone o repositório:**
+1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/seu-usuario/investmind.git
-cd investmind
+git clone https://github.com/emnuelledev/investmind-app.git
+cd investmind-app
 ```
 
-2. **Instale as dependências:**
+2. **Install dependencies:**
 
 ```bash
 npm install
 ```
 
-3. **Execute o projeto:**
+3. **Run the app:**
 
-- Em emulador Android:
+- Using Android Emulator:
 ```bash
 npx expo start --android
 ```
 
-- No Expo Go (celular):
+- Using Expo Go (on mobile):
 ```bash
 npx expo start
 ```
 
-## 🧪 Testes Manuais Realizados
+## 🧪 Manual Tests Performed
 
-- ✅ Fluxo de login e cadastro
-- ✅ Fluxo completo de quiz e recomendação
-- ✅ Aplicações e resgates com saldo validado
-- ✅ Histórico de todas as ações salvo em `AsyncStorage`
-- ✅ Testes realizados no emulador Android Studio
-- ✅ Interface funcional e responsiva em múltiplos tamanhos de tela
+- ✅ Login and registration flow  
+- ✅ Complete quiz and personalized recommendation  
+- ✅ Investments and withdrawals with balance validation  
+- ✅ All user actions saved in `AsyncStorage`  
+- ✅ Tested with Android Studio emulator  
+- ✅ Fully responsive interface across multiple screen sizes
 
-## ✍️ Integrantes do Grupo
+## 📘 Final Notes
 
-| Nome                  | RM        |
-|-----------------------|-----------|
-| Emanuelle Soares      | RM97973   |
-| Julia Amorim          | RM99609   |
-| Lana Leite            | RM551143  |
-| Matheus Cavasini      | RM97722   |
+- This is an **academic project** developed during the **Challenge XP Inc. 2025 – Virtual Advisor Edition**.
+- All data is stored locally (offline mode).
+- The project focuses on **financial education, simulation, and accessible UX**.
+- The app is under continuous improvement and ready for future integration with real APIs or secure authentication systems.
 
-## 📘 Observações Finais
+## 🪪 License
 
-- O app foi idealizado e desenvolvido durante o **Challenge XP Inc. 2025 - Assessor Virtual**.
-- Todos os dados são salvos localmente (modo offline).
-- O projeto foca em **educação financeira, simulação e UX acessível**.
-- O repositório está pronto para futura integração com APIs de investimentos reais ou autenticação segura.
-
-## 🪪 Licença
-
-Projeto acadêmico — uso permitido apenas para fins educacionais e não comerciais.
+Academic use only — non-commercial, educational purposes permitted.
