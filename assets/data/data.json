@@ -1,0 +1,34 @@
+{
+  "usuarios": [
+    {
+      "nome": "Usuário Teste",
+      "email": "teste@investmind.com",
+      "cpf": "12345678900",
+      "senha": "1234",
+      "saldo": 1500.75
+    },
+    {
+      "nome": "Maria Silva",
+      "email": "maria@investmind.com",
+      "cpf": "98765432100",
+      "senha": "abcd",
+      "saldo": 980.00
+    }
+  ],
+  "perfis": ["conservador", "moderado", "agressivo"],
+  "investimentos": {
+    "conservador": ["Tesouro Selic", "CDB Liquidez Diária", "Fundos de Renda Fixa"],
+    "moderado": ["Tesouro IPCA", "Fundos Multimercado", "LCI/LCA"],
+    "agressivo": ["Ações", "ETFs", "Criptomoedas"]
+  },
+  "quiz": [
+    {
+      "pergunta": "Você prefere segurança ou retorno?",
+      "opcoes": [
+        { "texto": "Segurança", "perfil": "conservador" },
+        { "texto": "Equilíbrio", "perfil": "moderado" },
+        { "texto": "Retorno", "perfil": "agressivo" }
+      ]
+    }
+  ]
+}
